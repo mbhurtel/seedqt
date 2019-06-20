@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    {% load static %}
+<link rel="stylesheet" href="{% static 'styleeeee.css' %}">
+<link rel="stylesheet" href="{% static 'bootstrap.min.css' %}">
+<link rel="stylesheet" href="{% static 'style.css' %}">
+<link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
+    <title>SeedQualityTester</title>
+  </head>
+  <body>
+      <img style="position: absolute; padding: 8px 10px 0 0; width: 85px; height:85px; display: block; left: 90%; top: 1%; z-index: 1;" src="https://res.cloudinary.com/jabeenstha/image/upload/v1561002772/sqa_oza4ke.png">
+      <div class="header-bar-warp d-flex">
+        <h3 style='color: white; font-family: Pacifico, cursive;font-size:26px;'>Seed Quality Tester</h3>
+        
+        <nav class="top-nav-area w-75">
+          
+          <!-- Menu -->
+          <ul class="main-menu primary-menu">
+            <li><a href="#"><strong>Home</strong></a></li>
+            <li><a href="#"><strong>Seed Info</strong></a></li>
+            <li><a href="#"><strong>Gallery</strong></a></li>
+            <li><a href="#"><strong>About Us</strong></a></li>
+            
+          </ul>
+        </nav>
+        
+        
+      </div>
+      
+    
+     <br><br><br>
+      <div class="container">
+          <form method="post" id="fileform" enctype="multipart/form-data">
+            {% csrf_token %} 
+            <div class="file-upload">
+              <div class="file-select">
+                  <div class="file-select-button" id="fileName"><h6>Upload Image</h6></div>
+                <div class="file-select-name" id="noFile">No Image Uploaded...</div> 
+                <input id="chooseFile" type="file" name="myfile">
+              </div>
+              <br><br>
+           </div>
+           <br>
+           <div class="container">
+              <div class="row">
+                <div class="col-sm-5">
+                    
+                </div>
+                
+                <div class="col-sm-4">
+                    <button id="sub" class="btn btn-primary btn-lg" type="submit">Test Quality</button>
+                </div>
+                 
+              </div>
+           </div>
+           
+          </form>
+      </div>
+      <br>
+      
+      <div class="container">
+        <div class="row">
+            <div class="col-sm-4">
+
+            </div>
+            <div class="col-md-4">
+                {% if file_url %}
+                <h1 id='filename'><strong>{{ result }}</strong></h1>
+                  <img src={{ file_url }}>
+                  {% else %}
+                  <br>
+                    <h1 style="color:white;">No Preview</h1>
+                {% endif %}
+            </div>
+        </div>
+       
+        </div>
+      
+      
+      
+    
+  </body>
+ 
+</html>
+
