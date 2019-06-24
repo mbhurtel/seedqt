@@ -1,0 +1,7 @@
+media
+db.sqlite3
+settings.py
+migrations
+*.pyc
+.idea/
+__pycache__/
