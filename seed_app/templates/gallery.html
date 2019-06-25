@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'styleeeee.css' %}">
+    <link rel="stylesheet" href="{% static 'bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
+    <title>Gallery</title>
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td,
+        th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr {
+            background-color: #dddddd;
+        }
+    </style>
+</head>
+
+<body>
+    <img style="position: absolute; padding: 8px 10px 0 0; width: 85px; height:85px; display: block; left: 90%; top: 1%; z-index: 1;"
+        src="https://res.cloudinary.com/jabeenstha/image/upload/v1561002772/sqa_oza4ke.png">
+    <div class="header-bar-warp d-flex">
+        <h3 style='color: white; font-family: Pacifico, cursive;font-size:26px;'><a style="color: white;"
+                href="{% url 'seed_app:index' %}">Seed Quality Tester</a></h3>
+
+        <nav class="top-nav-area w-75">
+
+            <!-- Menu -->
+            <ul class="main-menu primary-menu">
+                <li><a href="{% url 'seed_app:index' %}"><strong>Home</strong></a></li>
+                <li><a href="{% url 'seed_app:seedinfo' %}"><strong>Seed Info</strong></a></li>
+                <li><a href="{% url 'seed_app:gallery' %}"><strong>Gallery</strong></a></li>
+                <li><a href="{% url 'seed_app:aboutus' %}"><strong>About Us</strong></a></li>
+            </ul>
+        </nav>
+    </div>
+    <br>
+    <br>
+    <div class="container">
+    <p style="color:white; font-size:150%;">Maize is a general crop that is cultivated extensively during summer (April
+        - August) in the
+        Terai and the Hilly
+        region of Nepal. As it is the most significant crop in the context of Nepal, the farmer and the general people
+        must be aware about all the aspects of Maize seed i.e. the type of maize seed to sow, the time for the maize
+        plant to grow completely, location and region to be cultivated, etc.
+        As per the research made on 2013 by National Maize Research Program, Rampur, Chitwan under Nepal Agricultural
+        Research Council, following fruitful statiscics can be obtained:
+    </p>
+    </div>
+
+    <br><br>
+    <div class="container">
+    <table>
+        <tr>
+            <th>SN</th>
+            <th>Registered Maize Varieties</th>
+            <th>Year of Release</th>
+            <th>Yield Potential Mt/ha</th>
+            <th>Maturity(Days)</th>
+            <th>Recommendation Domain</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Bio-9681, F1</td>
+            <td>2010</td>
+            <td>6.5-8</td>
+            <td>90-110</td>
+            <td>Mid Hill Mid Dev.
+                Region-summer season
+                East Terai winter seaon</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Rajkumar, F1</td>
+            <td>2010</td>
+            <td>8-9</td>
+            <td>100-110</td>
+            <td>Mid Hill Mid Dev.
+                Region-summer season
+                East Terai winter seaon</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Nutan (KH-101), F1</td>
+            <td>2010</td>
+            <td>6.5-8</td>
+            <td>90-92</td>
+            <td>Mid Hill Mid Dev.
+                Region-summer season</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>Super 900 M, F1</td>
+            <td>2010</td>
+            <td>8-12</td>
+            <td>120-160</td>
+            <td>Inner Terai-Winter and
+                Summer seaon</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>DKC 9081</td>
+            <td>2011</td>
+            <td>10-12</td>
+            <td>120-160</td>
+            <td>Inner Terai-Winter
+                season (kartik-magh)</td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td>Alrounder, F1</td>
+            <td>2011</td>
+            <td>7-10</td>
+            <td>120-160</td>
+            <td>Terai-Winter and
+                Summer seaon</td>
+        </tr>
+    </table>
+    </div>
+<br> <br>
+</body>
+</html>

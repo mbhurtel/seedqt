@@ -46,3 +46,16 @@ def index(request):
                                  'result': result, 'file_url': file_url })
 
     return render(request, "index.html")
+
+
+def seedinfo(request):
+    return render(request, 'seedinfo.html')
+
+
+def gallery(request):
+    return render(request, 'gallery.html')
+
+def aboutus(request):
+    return render(request, 'aboutus.html')
+
+    
