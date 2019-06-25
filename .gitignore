@@ -1,7 +1,7 @@
-media
-db.sqlite3
-settings.py
+
+__pycache__/
 migrations
 *.pyc
-.idea/
-__pycache__/
+.idea
+media
+
