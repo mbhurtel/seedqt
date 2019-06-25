@@ -1,5 +1,7 @@
+
 __pycache__/
 migrations
 *.pyc
 .idea
 media
+
