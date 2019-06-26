@@ -1,39 +1,68 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<style>
+    html {
+    box-sizing: border-box;
+}
 
-<head>
-    <meta charset="utf-8">
-    {% load static %}
-    <link rel="stylesheet" href="{% static 'styleeeee.css' %}">
-    <link rel="stylesheet" href="{% static 'bootstrap.min.css' %}">
-    <link rel="stylesheet" href="{% static 'style.css' %}">
-    <link rel="stylesheet" href="{% static 'imgs.css' %}">
-    <link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
-    <title>About Us</title>
-    
-</head>
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
 
-<body>
-    <img style="position: absolute; padding: 8px 10px 0 0; width: 85px; height:85px; display: block; left: 90%; top: 1%; z-index: 1;"
-        src="https://res.cloudinary.com/jabeenstha/image/upload/v1561002772/sqa_oza4ke.png">
-    <div class="header-bar-warp d-flex">
-        <h3 style='color: white; font-family: Pacifico, cursive;font-size:26px;'><a style="color: white;"
-                href="{% url 'seed_app:index' %}">Seed Quality Tester</a></h3>
+.column {
+    float: left;
+    width: 26.3%;
+    margin-bottom: 16px;
+    padding: 0 8px;
+}
 
-        <nav class="top-nav-area w-75">
+@media screen and (max-width: 650px) {
+    .column {
+        width: 100%;
+        display: block;
+    }
+}
 
-            <!-- Menu -->
-            <ul class="main-menu primary-menu">
-                <li><a href="{% url 'seed_app:index' %}"><strong>Home</strong></a></li>
-                <li><a href="{% url 'seed_app:seedinfo' %}"><strong>Seed Info</strong></a></li>
-                <li><a href="{% url 'seed_app:gallery' %}"><strong>Gallery</strong></a></li>
-                <li><a href="{% url 'seed_app:aboutus' %}"><strong>About Us</strong></a></li>
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
 
-            </ul>
-        </nav>
+.container {
+    padding: 0 16px;
+}
 
+.container::after,
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
 
-    </div>
+.title {
+    color: grey;
+}
+
+.button {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+}
+
+.button:hover {
+    background-color: #555;
+}
+
+</style>
+{% extends 'base.html' %}
+{% load static %}
+{% block body_block %}
     <br><br>
     <div class="row">
         <div class="col-md-2"></div>
@@ -94,5 +123,4 @@
             </div>
         </div>
     </div>
-    </body>
-    </html>
+   {% endblock %}

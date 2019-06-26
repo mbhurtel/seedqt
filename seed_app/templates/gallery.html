@@ -1,54 +1,26 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<style>
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
 
-<head>
-    <meta charset="utf-8">
-    {% load static %}
-    <link rel="stylesheet" href="{% static 'styleeeee.css' %}">
-    <link rel="stylesheet" href="{% static 'bootstrap.min.css' %}">
-    <link rel="stylesheet" href="{% static 'style.css' %}">
-    <link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
-    <title>Gallery</title>
-    <style>
-        table {
-            font-family: arial, sans-serif;
-            border-collapse: collapse;
-            width: 100%;
-        }
+    td,
+    th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
 
-        td,
-        th {
-            border: 1px solid #dddddd;
-            text-align: left;
-            padding: 8px;
-        }
+    tr {
+        background-color: #dddddd;
+    }
+</style>
+{% extends 'base.html' %}
 
-        tr {
-            background-color: #dddddd;
-        }
-    </style>
-</head>
-
-<body>
-    <img style="position: absolute; padding: 8px 10px 0 0; width: 85px; height:85px; display: block; left: 90%; top: 1%; z-index: 1;"
-        src="https://res.cloudinary.com/jabeenstha/image/upload/v1561002772/sqa_oza4ke.png">
-    <div class="header-bar-warp d-flex">
-        <h3 style='color: white; font-family: Pacifico, cursive;font-size:26px;'><a style="color: white;"
-                href="{% url 'seed_app:index' %}">Seed Quality Tester</a></h3>
-
-        <nav class="top-nav-area w-75">
-
-            <!-- Menu -->
-            <ul class="main-menu primary-menu">
-                <li><a href="{% url 'seed_app:index' %}"><strong>Home</strong></a></li>
-                <li><a href="{% url 'seed_app:seedinfo' %}"><strong>Seed Info</strong></a></li>
-                <li><a href="{% url 'seed_app:gallery' %}"><strong>Gallery</strong></a></li>
-                <li><a href="{% url 'seed_app:aboutus' %}"><strong>About Us</strong></a></li>
-            </ul>
-        </nav>
-    </div>
-    <br>
-    <br>
+{% block body_block %}
+    <br><br>
     <div class="container">
     <p style="color:white; font-size:150%;">Maize is a general crop that is cultivated extensively during summer (April
         - August) in the
@@ -60,7 +32,6 @@
         Research Council, following fruitful statiscics can be obtained:
     </p>
     </div>
-
     <br><br>
     <div class="container">
     <table>
@@ -131,5 +102,4 @@
     </table>
     </div>
 <br> <br>
-</body>
-</html>
+{% endblock %}
