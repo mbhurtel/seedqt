@@ -6,6 +6,6 @@ $('#chooseFile').bind('change', function () {
    }
    else {
      $(".file-upload").addClass('active');
-     $("#noFile").text(filename.replace("C:\\fakepath\\", "")); 
+     $("#noFile").text(filename.replace("/media/", "myFile")); 
    }
  });

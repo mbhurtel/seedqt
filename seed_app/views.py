@@ -21,30 +21,32 @@ out_dict = {'Average': 0,
 li = list(out_dict.keys())
 
 def index(request):
-    if request.method == 'POST' and request.FILES['myfile']:
-        myfile = request.FILES['myfile']
-        fs = FileSystemStorage()
-        filename = fs.save(myfile.name, myfile)
-        m = str(filename)
-        K.clear_session()
-        im = Image.open("{}/".format(settings.MEDIA_ROOT) + m)
-        j = im.resize((256, 256),)
-        l = "predicted.jpg"
-        j.save("{}/".format(settings.MEDIA_ROOT) + l)
-        file_url = fs.url(l)
-        mod = load_model('seed_app/model.hdf5', compile=False)
-        img = image.load_img(myfile, target_size=(32, 32))
-        x = image.img_to_array(img)
-        x = np.expand_dims(x, axis=0)
-        preds = mod.predict(x)
-        d = preds.flatten()
-        j = d.max()
-        for index, item in enumerate(d):
-            if item == j:
-                result = li[index]
-                return render(request, "index.html", {
-                                 'result': result, 'file_url': file_url })
-
+    if request.method == 'POST':
+        if 'myfile' not in request.FILES:
+            return HttpResponseRedirect(reverse('seed_app:index'))
+        elif request.FILES['myfile']:
+            myfile = request.FILES['myfile']
+            fs = FileSystemStorage()
+            filename = fs.save(myfile.name, myfile)
+            m = str(filename)
+            K.clear_session()
+            im = Image.open("{}/".format(settings.MEDIA_ROOT) + m)
+            j = im.resize((256, 256),)
+            l = "predicted.jpg"
+            j.save("{}/".format(settings.MEDIA_ROOT) + l)
+            file_url = fs.url(l)
+            mod = load_model('seed_app/model.hdf5', compile=False)
+            img = image.load_img(myfile, target_size=(32, 32))
+            x = image.img_to_array(img)
+            x = np.expand_dims(x, axis=0)
+            preds = mod.predict(x)
+            d = preds.flatten()
+            j = d.max()
+            for index, item in enumerate(d):
+                if item == j:
+                    result = li[index]
+                    return render(request, "index.html", {
+                                    'result': result, 'file_url': file_url })
     return render(request, "index.html")
 
 
@@ -58,4 +60,6 @@ def gallery(request):
 def aboutus(request):
     return render(request, 'aboutus.html')
 
-    
+
+def upload(request):
+    return render(request, 'index1.html')

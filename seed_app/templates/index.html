@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 {% extends 'base.html' %}
+{% block title %}Seed Quality Tester{% endblock %}
       {% block body_block %}
     <br><br><br>
     <br><br>
@@ -13,7 +14,13 @@
                     <div class="file-select-button" id="fileName">
                         <h6>Upload Image</h6>
                     </div>
-                    <div class="file-select-name" id="noFile">No Image Uploaded...</div>
+                    <div class="file-select-name" id="noFile">
+                        {% if file_url %}
+                        {{ file_url }}
+                        {% else %}
+                        No Image Uploaded...
+                        {% endif %}
+                    </div>
                     <input id="chooseFile" type="file" name="myfile">
                 </div>
                 <br><br>

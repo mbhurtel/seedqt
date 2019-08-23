@@ -2,8 +2,9 @@ body {
   background-image: url("images/rQlNu5.jpg");
   height: 100%;
   background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat; 
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   background-color: gray !important;
 }
 
