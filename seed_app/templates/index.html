@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 {% extends 'base.html' %}
       {% block body_block %}
-      <br><br><br>
+    <br><br><br>
+    <br><br>
+    <br>
+    <br>
     <div class="container">
         <form method="post" id="fileform" enctype="multipart/form-data">
             {% csrf_token %}
@@ -16,37 +19,29 @@
                 <br><br>
             </div>
             <br>
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-5">
-
-                    </div>
-
-                    <div class="col-sm-4">
-                        <button id="sub" class="btn btn-primary btn-lg" type="submit">Test Quality</button>
-                    </div>
-
-                </div>
+            <div class="file-upload-button">
+    
+    
+                <button id="sub" class="btn btn-primary btn-lg" type="submit">Test Quality</button>
+    
             </div>
-
         </form>
     </div>
     <br>
-      <div class="container">
-        <div class="row">
-            <div class="col-sm-4">
-
-            </div>
-            <div class="col-md-4">
-                {% if file_url %}
-                <h1 id='filename'><strong>{{ result }}</strong></h1>
-                  <img src={{ file_url }}>
-                  {% else %}
-                  <br>
-                    <h1 style="color:white; font-size:68px;">No Preview</h1>
-                {% endif %}
-            </div>
+    
+    <div class="container">
+        <div class="file-upload-button">
+    
+            {% if file_url %}
+            <h2 id='filename'><strong>{{ result }}</strong></h2>
+            <br><br><br>
+            <img src={{ file_url }}>
+            {% else %}
+            <br>
+            <h2 style="color:white;">No Preview</h2>
+            {% endif %}
+    
         </div>
-       
-        </div>
+    
+    </div>
         {% endblock %}

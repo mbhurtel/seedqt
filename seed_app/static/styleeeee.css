@@ -1,7 +1,9 @@
 body {
   background-image: url("images/rQlNu5.jpg");
+  height: 100%;
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat; 
   background-color: gray !important;
 }
 
@@ -44,6 +46,14 @@ header {
   width: 45%;
   margin-left: 27.5%;
 }
+.file-upload-button { 
+  display:block;
+  text-align:center;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 7.9px;
+  margin-left: 0.5%;
+}
+
 
 .file-upload .file-select {
   display:block;

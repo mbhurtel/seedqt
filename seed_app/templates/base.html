@@ -12,25 +12,29 @@
 </head>
 
 <body>
-    <img style="position: absolute; padding: 8px 10px 0 0; width: 85px; height:85px; display: block; left: 90%; top: 1%; z-index: 1;"
-        src="https://res.cloudinary.com/jabeenstha/image/upload/v1561002772/sqa_oza4ke.png">
-    <div class="header-bar-warp d-flex">
-        <h3 style='color: white; font-family: Pacifico, cursive;font-size:26px;'><a style="color: white;"
-                href="{% url 'seed_app:index' %}">Seed Quality Tester</a></h3>
-
-        <nav class="top-nav-area w-75">
-
-            <!-- Menu -->
-            <ul class="main-menu primary-menu">
-                <li><a href="{% url 'seed_app:index' %}"><strong>Home</strong></a></li>
-                <li><a href="{% url 'seed_app:seedinfo' %}"><strong>Seed Info</strong></a></li>
-                <li><a href="{% url 'seed_app:gallery' %}"><strong>Gallery</strong></a></li>
-                <li><a href="{% url 'seed_app:aboutus' %}"><strong>About Us</strong></a></li>
-
-            </ul>
-        </nav>
-
-
+    <div class="container">
+    
+        <div class="header-bar-warp d-flex">
+    
+            <h3 style='color: white; font-family: Pacifico, cursive;font-size:26px;'><a style="color: white;"
+                    href="{% url 'seed_app:index' %}">Seed Quality Tester</a></h3>
+    
+            <nav class="top-nav-area w-75">
+    
+                <!-- Menu -->
+                <ul class="main-menu primary-menu">
+                    <li><a href="{% url 'seed_app:index' %}"><strong>Home</strong></a></li>
+                    <li><a href="{% url 'seed_app:seedinfo' %}"><strong>Seed Info</strong></a></li>
+                    <li><a href="{% url 'seed_app:gallery' %}"><strong>Gallery</strong></a></li>
+                    <li><a href="{% url 'seed_app:aboutus' %}"><strong>About Us</strong></a></li>
+    
+                </ul>
+                <img style="position: absolute; padding: 8px 10px 0 0; width: 85px; height:85px; display: block; left: 77%; top: 1%; z-index: 1;"
+                    src="https://res.cloudinary.com/jabeenstha/image/upload/v1561002772/sqa_oza4ke.png">
+            </nav>
+    
+    
+        </div>
     </div>
 
 
